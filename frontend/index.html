@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="portfolioApp">
+
+<head ng-app="portfolioApp">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratham Rathod | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <script src="app.js"></script>
+  <script src="directives/header.dir.js"></script>
+  <script src="directives/hero.dir.js"></script>
+  <script src="directives/about.dir.js"></script>
+  <script src="directives/skill.dir.js"></script>
+  <script src="directives/projects.dir.js"></script>
+  <script src="directives/contact.dir.js"></script>
+  <script src="directives/footer.dir.js"></script>
+
+  <script src="services/about.service.js"></script>
+</head>
+
+<body class="font-sans bg-dark text-gray-200 min-h-screen">
+  <!-- Header/Navigation -->
+  <header-section></header-section>
+
+  <!-- Hero Section -->
+  <hero-section></hero-section>
+
+  <!-- About Section -->
+  <about-section></about-section>
+
+  <!-- Skills Section -->
+  <skill-section></skill-section>
+
+  <!-- Projects Section -->
+  <project-section></project-section>
+
+  <!-- Resume Section -->
+
+
+  <!-- Contact Section -->
+  <contact-section></contact-section>
+
+  <!-- Footer -->
+  <footer-section></footer-section>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top"
+    class="fixed bottom-6 right-6 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

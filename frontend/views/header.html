@@ -1,0 +1,35 @@
+<header class="fixed w-full bg-darker bg-opacity-90 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <span class="gradient-text">{{about.name.split(' ')[0]}}&nbsp;</span><span>{{about.name.split(' ')[1]}}</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link active-nav">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-200 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+            <a href="{{about.resume}}"
+                class="hidden md:block px-5 py-2 bg-primary hover:bg-indigo-600 text-white rounded-md transition-all">Resume</a>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-darker border-t border-gray-800">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="py-2 px-4 hover:bg-darkgray rounded-md">Home</a>
+                <a href="#about" class="py-2 px-4 hover:bg-darkgray rounded-md">About</a>
+                <a href="#skills" class="py-2 px-4 hover:bg-darkgray rounded-md">Skills</a>
+                <a href="#projects" class="py-2 px-4 hover:bg-darkgray rounded-md">Projects</a>
+                <a href="#contact" class="py-2 px-4 hover:bg-darkgray rounded-md">Contact</a>
+                <a href="{{about.resume}}"
+                    class="py-2 px-4 bg-primary hover:bg-indigo-600 text-white rounded-md transition-all text-center">Resume</a>
+            </div>
+        </div>
+    </header>

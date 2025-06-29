@@ -1,0 +1,69 @@
+<section id="home" class="min-h-screen flex items-center justify-center pt-16 pb-20 px-4">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span class="block">Hello, I'm</span>
+                <span class="gradient-text typing-effect" id="name">{{about.name}}</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-gray-400 mb-6">
+                <span id="role">{{about.tagLine}}</span>
+            </h2>
+            <p class="text-gray-400 mb-8 max-w-lg">
+                {{about.title}}
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#projects"
+                    class="px-6 py-3 bg-primary hover:bg-indigo-600 text-white rounded-md transition-all">
+                    View My Work
+                </a>
+                <a href="#contact"
+                    class="px-6 py-3 border border-primary text-primary hover:bg-primary hover:bg-opacity-10 rounded-md transition-all">
+                    Contact Me
+                </a>
+            </div>
+            <div class="flex mt-8 space-x-4">
+                <a href="{{about.github}}" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="{{about.linkedin}}" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="{{about.instagram}}" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="{{about.email}}" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+            </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+            <div class="relative">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary to-accent p-1">
+                    <div class="w-full h-full rounded-full bg-dark flex items-center justify-center overflow-hidden">
+                        <svg class="w-40 h-40 md:w-48 md:h-48 text-gray-600" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                clip-rule="evenodd"></path>
+                                <img ng-src="http://localhost:2000/{{ about.profilePhoto }}" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="absolute -bottom-4 -right-4 bg-darkgray p-3 rounded-lg shadow-lg">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-sm font-medium">Available for hire</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down">
+        <a href="#about" class="text-gray-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </a>
+    </div>
+</section>

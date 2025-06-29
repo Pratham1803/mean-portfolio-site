@@ -1,0 +1,115 @@
+<section id="skills" class="py-20 bg-dark section">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-2">My Skills</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+                I've worked with a variety of technologies and frameworks. Here's a comprehensive list of my
+                technical skills.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Mobile Development -->
+            <div
+                class="bg-darkgray p-6 rounded-lg shadow-lg border border-gray-800 hover:border-primary transition-all">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-mobile-alt text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Mobile Dev</h3>
+                </div>
+                <div class="space-y-3">
+                    <div class="skill-pill px-3 py-1 bg-primary bg-opacity-10 text-primary rounded-full inline-block mr-2 mb-2"
+                        ng-repeat="s in skill.categories.mobileDev">
+                        {{ s }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Development -->
+            <div
+                class="bg-darkgray p-6 rounded-lg shadow-lg border border-gray-800 hover:border-primary transition-all">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-accent bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-server text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Backend Dev</h3>
+                </div>
+                <div class="space-y-3">
+                    <div class="skill-pill px-3 py-1 bg-accent bg-opacity-10 text-accent rounded-full inline-block mr-2 mb-2"
+                        ng-repeat="s in skill.categories.backend">
+                        {{s}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database -->
+            <div
+                class="bg-darkgray p-6 rounded-lg shadow-lg border border-gray-800 hover:border-primary transition-all">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-secondary bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-database text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Database</h3>
+                </div>
+                <div class="space-y-3">
+                    <div class="skill-pill px-3 py-1 bg-secondary bg-opacity-10 text-secondary rounded-full inline-block mr-2 mb-2"
+                        ng-repeat="s in skill.categories.database">
+                        {{ s }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Others -->
+            <div
+                class="bg-darkgray p-6 rounded-lg shadow-lg border border-gray-800 hover:border-primary transition-all">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-tools text-2xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Tools & Others</h3>
+                </div>
+                <div class="space-y-3">
+                    <div class="skill-pill px-3 py-1 bg-purple-500 bg-opacity-10 text-purple-500 rounded-full inline-block mr-2 mb-2"
+                        ng-repeat="s in skill.categories.tools">
+                        {{ s }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill Bars -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-6">Programming Languages</h3>
+
+                <div class="mb-4" ng-repeat="lang in skill.programmingSkills">
+                    <div class="flex justify-between mb-1">
+                        <span>{{lang.language}}</span>
+                        <span>{{lang.proficiency}}%</span>
+                    </div>
+                    <div class="w-full bg-darkgray rounded-full h-2.5">
+                        <div class="bg-primary h-2.5 rounded-full" ng-style="{'width': lang.proficiency + '%'}"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-6">Other Skills</h3>
+
+                <div class="mb-4" ng-repeat="skill in skill.otherSkills">
+                    <div class="flex justify-between mb-1">
+                        <span>{{skill.name}}</span>
+                        <span>{{skill.proficiency}}</span>
+                    </div>
+                    <div class="w-full bg-darkgray rounded-full h-2.5">
+                        <div class="bg-accent h-2.5 rounded-full" ng-style="{'width': skill.proficiency + '%'}"></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+</section>
