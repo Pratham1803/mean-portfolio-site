@@ -31,7 +31,7 @@
                 <a href="{{about.instagram}}" class="text-gray-400 hover:text-white transition-colors">
                     <i class="fab fa-instagram text-2xl"></i>
                 </a>
-                <a href="{{about.email}}" class="text-gray-400 hover:text-white transition-colors">
+                <a href="mailto:{{about.email}}" class="text-gray-400 hover:text-white transition-colors">
                     <i class="fas fa-envelope text-2xl"></i>
                 </a>
             </div>
@@ -44,7 +44,7 @@
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
                                 clip-rule="evenodd"></path>
-                                <img ng-src="http://localhost:2000/{{ about.profilePhoto }}" />
+                                <img ng-src="{{ about.profilePhoto }}" />
                         </svg>
                     </div>
                 </div>
