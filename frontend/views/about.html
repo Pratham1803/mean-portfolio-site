@@ -47,13 +47,12 @@
           {{about.description2}}
         </p>
         <h3 class="font-bold text-primary">Education</h3>
-        <div class="grid grid-cols-2 gap-4 mb-6" >
-          <div ng-repeat="p in about.education " class="bg-darkgray p-4 rounded-lg shadow-md">            
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div ng-repeat="p in about.education" class="bg-darkgray p-4 rounded-lg shadow-md">
             <p class="text-gray-300">{{p.title}}</p>
             <p class="text-gray-400 text-sm">{{p.duration}}</p>
             <p class="text-gray-400 text-sm">{{p.location}} - {{p.percentage}}</p>
           </div>
-          
         </div>
         <a href="{{about.resume}}"
           class="inline-block px-6 py-3 bg-primary hover:bg-indigo-600 text-white rounded-md transition-all">

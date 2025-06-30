@@ -59,8 +59,8 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-lg">Email</h4>
-                                    <a href="mailto:prathamrathod.dev@gmail.com"
-                                        class="text-gray-300 hover:text-primary transition-colors">prathamrathod.dev@gmail.com</a>
+                                    <a href="mailto:{{about.email}}"
+                                        class="text-gray-300 hover:text-primary transition-colors">{{about.email}}</a>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -71,7 +71,7 @@
                                 <div>
                                     <h4 class="font-bold text-lg">Phone</h4>
                                     <a href="tel:+1234567890"
-                                        class="text-gray-300 hover:text-primary transition-colors">+91 98765 43210</a>
+                                        class="text-gray-300 hover:text-primary transition-colors">{{about.phone}}</a>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -81,7 +81,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-lg">Location</h4>
-                                    <p class="text-gray-300">Gujarat, India</p>
+                                    <p class="text-gray-300">{{about.location}}</p>
                                 </div>
                             </div>
                         </div>
@@ -91,11 +91,11 @@
                     <div class="bg-darkgray p-8 rounded-lg shadow-lg border border-gray-800">
                         <h3 class="text-2xl font-bold mb-6">Follow Me</h3>
                         <div class="flex flex-wrap gap-4">
-                            <a href="#"
+                            <a href="{{about.github}}"
                                 class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
-                            <a href="#"
+                            <a href="{{about.linkedin}}"
                                 class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors">
                                 <i class="fab fa-linkedin-in text-xl"></i>
                             </a>
@@ -103,7 +103,7 @@
                                 class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors">
                                 <i class="fab fa-twitter text-xl"></i>
                             </a>
-                            <a href="#"
+                            <a href="{{about.instagram}}"
                                 class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors">
                                 <i class="fab fa-instagram text-xl"></i>
                             </a>
