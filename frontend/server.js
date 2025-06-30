@@ -11,9 +11,9 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = 3000;
 console.log(`Starting server...
-Listening at: http://localhost:${PORT}
+Listening at Port: ${PORT}
 Serving static files from: ${path.join(__dirname, "../frontend")}
 `);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

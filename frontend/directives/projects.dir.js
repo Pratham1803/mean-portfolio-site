@@ -9,7 +9,7 @@ app.directive("projectSection", function () {
       $scope.showAll = false;
 
       $http
-        .get("http://localhost:2000/portfolio/api/v1/projects")
+        .get(`${BASE_URL}projects`)
         .then(function (res) {
           $scope.projects = res.data;
         });

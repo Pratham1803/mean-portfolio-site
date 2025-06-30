@@ -4,7 +4,7 @@ app.directive('skillSection', function() {
     restrict: 'E',
     templateUrl: 'views/skill.html',
     controller: function($scope, $http) {
-      $http.get('http://127.0.0.1:2000/portfolio/api/v1/skills')
+      $http.get(`${BASE_URL}skills`)
         .then(function(res) {
           $scope.skill = res.data;
         });

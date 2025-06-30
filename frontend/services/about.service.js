@@ -1,3 +1,5 @@
+
+
 app.service("AboutService", function ($http, $q) {
   let aboutCache = null;
   let aboutPromise = null;
@@ -12,10 +14,10 @@ app.service("AboutService", function ($http, $q) {
     if (aboutPromise) {
       return aboutPromise;
     }
-
+    
     // First-time API call
     aboutPromise = $http
-      .get("http://localhost:2000/portfolio/api/v1/about")
+      .get(BASE_URL + "about")
       .then(function (response) {
         aboutCache = response.data;
         return aboutCache;
