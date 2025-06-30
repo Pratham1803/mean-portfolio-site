@@ -1,6 +1,12 @@
 <section id="about" class="py-20 bg-darker section">
   <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row items-center">
+    <!-- Loading State -->
+    <div ng-if="isLoading" class="text-center">
+      <section-loader message="Loading about information..."></section-loader>
+    </div>
+    
+    <!-- Content -->
+    <div ng-if="!isLoading" class="flex flex-col md:flex-row items-center">
       <div class="md:w-1/2 mb-10 md:mb-0">
         <div class="relative">
           <div class="w-full max-w-md mx-auto bg-darkgray p-6 rounded-lg shadow-lg border border-gray-800">
@@ -59,6 +65,11 @@
           Download Resume
         </a>
       </div>
+    </div>
+    
+    <!-- Error State -->
+    <div ng-if="error" class="text-center text-red-400">
+      <p>Error loading about information. Please try again later.</p>
     </div>
   </div>
 </section>

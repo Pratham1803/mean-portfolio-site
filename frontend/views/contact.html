@@ -8,7 +8,18 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Loading State -->
+            <div ng-if="isLoading">
+                <section-loader message="Loading contact information..."></section-loader>
+            </div>
+
+            <!-- Error State -->
+            <div ng-if="error" class="text-center text-red-400">
+                <p>Error loading contact information. Please try again later.</p>
+            </div>
+
+            <!-- Content -->
+            <div ng-if="!isLoading && !error" class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Contact Form -->
                 <div class="bg-darkgray p-8 rounded-lg shadow-lg border border-gray-800">
                     <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>

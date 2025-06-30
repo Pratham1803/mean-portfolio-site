@@ -1,6 +1,19 @@
 <footer class="bg-darker py-8 border-t border-gray-800">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
+            <!-- Loading State -->
+            <div ng-if="isLoading" class="text-center">
+                <div class="animate-pulse flex justify-between items-center">
+                    <div class="bg-gray-700 h-6 w-32 rounded"></div>
+                    <div class="flex space-x-4">
+                        <div class="bg-gray-700 h-4 w-16 rounded"></div>
+                        <div class="bg-gray-700 h-4 w-16 rounded"></div>
+                        <div class="bg-gray-700 h-4 w-16 rounded"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div ng-if="!isLoading" class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
                     <div class="text-2xl font-bold">
                         <span class="gradient-text">{{about.name.split(' ')[0]}}&nbsp;</span><span>{{about.name.split(' ')[1]}}</span>

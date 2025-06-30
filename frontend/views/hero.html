@@ -1,39 +1,54 @@
 <section id="home" class="min-h-screen flex items-center justify-center pt-16 pb-20 px-4">
     <div class="container mx-auto flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-10 md:mb-0">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                <span class="block">Hello, I'm</span>
-                <span class="gradient-text typing-effect" id="name">{{about.name}}</span>
-            </h1>
-            <h2 class="text-2xl md:text-3xl text-gray-400 mb-6">
-                <span id="role">{{about.tagLine}}</span>
-            </h2>
-            <p class="text-gray-400 mb-8 max-w-lg">
-                {{about.title}}
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#projects"
-                    class="px-6 py-3 bg-primary hover:bg-indigo-600 text-white rounded-md transition-all">
-                    View My Work
-                </a>
-                <a href="#contact"
-                    class="px-6 py-3 border border-primary text-primary hover:bg-primary hover:bg-opacity-10 rounded-md transition-all">
-                    Contact Me
-                </a>
+            <div ng-if="isLoading">
+                <div class="animate-pulse">
+                    <div class="bg-gray-700 h-8 rounded mb-2 w-32"></div>
+                    <div class="bg-gray-700 h-12 rounded mb-4 w-64"></div>
+                    <div class="bg-gray-700 h-8 rounded mb-6 w-48"></div>
+                    <div class="bg-gray-700 h-4 rounded mb-2"></div>
+                    <div class="bg-gray-700 h-4 rounded mb-8 w-3/4"></div>
+                    <div class="flex gap-4">
+                        <div class="bg-gray-700 h-10 w-32 rounded"></div>
+                        <div class="bg-gray-700 h-10 w-28 rounded"></div>
+                    </div>
+                </div>
             </div>
-            <div class="flex mt-8 space-x-4">
-                <a href="{{about.github}}" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-github text-2xl"></i>
-                </a>
-                <a href="{{about.linkedin}}" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-linkedin text-2xl"></i>
-                </a>
-                <a href="{{about.instagram}}" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <a href="mailto:{{about.email}}" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fas fa-envelope text-2xl"></i>
-                </a>
+            <div ng-if="!isLoading">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    <span class="block">Hello, I'm</span>
+                    <span class="gradient-text typing-effect" id="name">{{about.name}}</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-400 mb-6">
+                    <span id="role">{{about.tagLine}}</span>
+                </h2>
+                <p class="text-gray-400 mb-8 max-w-lg">
+                    {{about.title}}
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects"
+                        class="px-6 py-3 bg-primary hover:bg-indigo-600 text-white rounded-md transition-all">
+                        View My Work
+                    </a>
+                    <a href="#contact"
+                        class="px-6 py-3 border border-primary text-primary hover:bg-primary hover:bg-opacity-10 rounded-md transition-all">
+                        Contact Me
+                    </a>
+                </div>
+                <div class="flex mt-8 space-x-4">
+                    <a href="{{about.github}}" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="{{about.linkedin}}" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="{{about.instagram}}" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="mailto:{{about.email}}" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="md:w-1/2 flex justify-center">

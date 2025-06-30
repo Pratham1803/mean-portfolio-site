@@ -9,7 +9,18 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Loading State -->
+        <div ng-if="isLoading">
+            <section-loader message="Loading skills..."></section-loader>
+        </div>
+
+        <!-- Error State -->
+        <div ng-if="error" class="text-center text-red-400">
+            <p>Error loading skills. Please try again later.</p>
+        </div>
+
+        <!-- Content -->
+        <div ng-if="!isLoading && !error" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Mobile Development -->
             <div
                 class="bg-darkgray p-6 rounded-lg shadow-lg border border-gray-800 hover:border-primary transition-all">
@@ -112,4 +123,5 @@
 
             </div>
         </div>
+    </div>
 </section>

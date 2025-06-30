@@ -1,7 +1,8 @@
 <header class="fixed w-full bg-darker bg-opacity-90 backdrop-blur-sm z-50 border-b border-gray-800">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold">
-                <span class="gradient-text">{{about.name.split(' ')[0]}}&nbsp;</span><span>{{about.name.split(' ')[1]}}</span>
+                <span ng-if="!isLoading" class="gradient-text">{{about.name.split(' ')[0]}}&nbsp;</span><span ng-if="!isLoading">{{about.name.split(' ')[1]}}</span>
+                <div ng-if="isLoading" class="animate-pulse bg-gray-700 h-6 w-32 rounded"></div>
             </div>
             <nav class="hidden md:flex space-x-8">
                 <a href="#home" class="nav-link active-nav">Home</a>
@@ -17,8 +18,9 @@
                     </path>
                 </svg>
             </button>
-            <a href="{{about.resume}}"
+            <a ng-if="!isLoading" href="{{about.resume}}"
                 class="hidden md:block px-5 py-2 bg-primary hover:bg-indigo-600 text-white rounded-md transition-all">Resume</a>
+            <div ng-if="isLoading" class="hidden md:block animate-pulse bg-gray-700 h-8 w-20 rounded"></div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-darker border-t border-gray-800">

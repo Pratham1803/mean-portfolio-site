@@ -1,4 +1,4 @@
-// directives/about.js
+// directives/projects.js
 app.directive("projectSection", function () {
   return {
     restrict: "E",
@@ -7,11 +7,17 @@ app.directive("projectSection", function () {
       $scope.filterType = "All";
       $scope.projects = [];
       $scope.showAll = false;
+      $scope.isLoading = true;
 
       $http
         .get(`${BASE_URL}projects`)
         .then(function (res) {
           $scope.projects = res.data;
+          $scope.isLoading = false;
+        }).catch(function(error) {
+          console.error('Error loading projects data:', error);
+          $scope.isLoading = false;
+          $scope.error = true;
         });
 
       $scope.visibleProjects = function () {

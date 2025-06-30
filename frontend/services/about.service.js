@@ -25,4 +25,12 @@ app.service("AboutService", function ($http, $q) {
 
     return aboutPromise;
   };
+
+  this.isLoading = function() {
+    return aboutPromise && !aboutCache;
+  };
+
+  this.isLoaded = function() {
+    return !!aboutCache;
+  };
 });

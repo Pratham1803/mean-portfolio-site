@@ -5,8 +5,16 @@ app.directive('aboutSection', function() {
     restrict: 'E',
     templateUrl: 'views/about.html',
     controller: function($scope, AboutService) {
+      $scope.isLoading = true;
+      $scope.about = null;
+
       AboutService.getAbout().then(function(data) {
         $scope.about = data;
+        $scope.isLoading = false;
+      }).catch(function(error) {
+        console.error('Error loading about data:', error);
+        $scope.isLoading = false;
+        $scope.error = true;
       });
     }
   };
