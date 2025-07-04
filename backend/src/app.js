@@ -25,4 +25,7 @@ app.use(`${BASE_URL}/skills`, skillRoute);
 const projectRoute = require("./routes/project.route");
 app.use(`${BASE_URL}/projects`, projectRoute);
 
+const contactRoute = require("./routes/contact.route");
+app.use(`${BASE_URL}/contact`, contactRoute);
+
 module.exports = app;

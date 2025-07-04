@@ -6,15 +6,12 @@ const connectDb = require("./db");
 
 connectDb()
   .then(() => {
-    const port = process.env.PORT || 8000;
-    app.listen(port, () => {
-      console.log("Server is Listening on Port :", port);
+    const PORT = process.env.PORT || 8000;
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+      console.log(`Contact form endpoint: http://localhost:${PORT}/portfolio/api/v1/contact`);
     });
   })
   .catch((error) => {
-    console.log(`Failed to connect with ${port} due to ${error.message}`);
+    console.log(`Failed to connect to database: ${error.message}`);
   });
-
-
-  const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
