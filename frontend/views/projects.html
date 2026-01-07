@@ -9,37 +9,37 @@
         </div>
 
         <!-- Loading State -->
-        <div ng-if="isLoading">
+        <div ng-if="vm.isLoading">
             <section-loader message="Loading projects..."></section-loader>
         </div>
 
         <!-- Error State -->
-        <div ng-if="error" class="text-center text-red-400">
+        <div ng-if="vm.error" class="text-center text-red-400">
             <p>Error loading projects. Please try again later.</p>
         </div>
 
         <!-- Content -->
-        <div ng-if="!isLoading && !error">
+        <div ng-if="!vm.isLoading && !vm.error">
             <!-- Project Filter -->
             <div class="flex flex-wrap justify-center mb-10">
 
                 <button class="filter-btn px-4 py-2 m-1 rounded-md"
-                    ng-class="{'bg-primary text-white active': filterType === 'All', 'bg-darkgray hover:bg-gray-700': filterType !== 'All'}"
-                    data-filter="all" ng-click="filterType = 'All'">
+                    ng-class="{'bg-primary text-white active': vm.filterType === 'All', 'bg-darkgray hover:bg-gray-700': vm.filterType !== 'All'}"
+                    data-filter="all" ng-click="vm.filterType = 'All'">
                     All
                 </button>
 
                 <button class="filter-btn px-4 py-2 m-1 rounded-md"
-                    ng-class="{'bg-primary text-white active': filterType === 'Android', 'bg-darkgray hover:bg-gray-700': filterType !== 'Android'}"
-                    data-filter="android" ng-click="filterType = 'Android'">Android</button>
+                    ng-class="{'bg-primary text-white active': vm.filterType === 'Android', 'bg-darkgray hover:bg-gray-700': vm.filterType !== 'Android'}"
+                    data-filter="android" ng-click="vm.filterType = 'Android'">Android</button>
 
                 <button class="filter-btn px-4 py-2 m-1 rounded-md"
-                    ng-class="{'bg-primary text-white active': filterType === 'Node.js', 'bg-darkgray hover:bg-gray-700': filterType !== 'Node.js'}"
-                    data-filter="nodejs" ng-click="filterType = 'Node.js'">Node.js</button>
+                    ng-class="{'bg-primary text-white active': vm.filterType === 'Node.js', 'bg-darkgray hover:bg-gray-700': vm.filterType !== 'Node.js'}"
+                    data-filter="nodejs" ng-click="vm.filterType = 'Node.js'">Node.js</button>
 
                 <button class="filter-btn px-4 py-2 m-1 rounded-md"
-                    ng-class="{'bg-primary text-white active': filterType === 'Python', 'bg-darkgray hover:bg-gray-700': filterType !== 'Python'}"
-                    data-filter="python" ng-click="filterType = 'Python'">Python</button>
+                    ng-class="{'bg-primary text-white active': vm.filterType === 'Python', 'bg-darkgray hover:bg-gray-700': vm.filterType !== 'Python'}"
+                    data-filter="python" ng-click="vm.filterType = 'Python'">Python</button>
             </div>
 
             <!-- Projects Grid -->
