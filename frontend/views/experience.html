@@ -1,0 +1,77 @@
+<section id="experience" class="py-20 bg-dark section">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-2">Work Experience</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+                My professional journey and the experiences that have shaped my career in software development.
+            </p>
+        </div>
+
+        <!-- Loading State -->
+        <div ng-if="isLoading">
+            <section-loader message="Loading experience..."></section-loader>
+        </div>
+
+        <!-- Error State -->
+        <div ng-if="error" class="text-center text-red-400">
+            <p>Error loading experience. Please try again later.</p>
+        </div>
+
+        <!-- Timeline Content -->
+        <div ng-if="!isLoading && !error" class="timeline-container">
+            <!-- Center Line -->
+            <div class="timeline-line hidden md:block"></div>
+
+            <!-- Timeline Items -->
+            <div class="timeline-item" ng-repeat="exp in experiences">
+                <!-- Timeline Dot -->
+                <div class="timeline-dot" ng-class="{'current': exp.type === 'current'}"></div>
+
+                <!-- Timeline Content Card -->
+                <div class="timeline-content">
+                    <!-- Header with Company and Position -->
+                    <div class="mb-4">
+                        <div class="flex flex-wrap items-start justify-between mb-2">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-white mb-1">{{ exp.position }}</h3>
+                                <div class="flex items-center flex-wrap gap-2 mb-2">
+                                    <span class="text-primary font-semibold text-lg">{{ exp.company }}</span>
+                                    <span class="experience-badge" ng-class="{'current': exp.type === 'current'}">
+                                        <i class="fas fa-circle text-xs mr-1" ng-if="exp.type === 'current'"></i>
+                                        {{ exp.type === 'current' ? 'Current' : 'Past' }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Duration and Location -->
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-400 mb-3">
+                            <span class="flex items-center">
+                                <i class="far fa-calendar-alt mr-2 text-accent"></i>
+                                {{ exp.duration }}
+                            </span>
+                            <span class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-secondary"></i>
+                                {{ exp.location }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        {{ exp.description }}
+                    </p>
+
+                    <!-- Technologies Used -->
+                    <div class="flex flex-wrap items-center" ng-if="exp.technologies.length > 0">
+                        <span class="text-sm text-gray-400 mr-3 mb-2">Technologies:</span>
+                        <span class="tech-tag" ng-repeat="tech in exp.technologies">
+                            {{ tech }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

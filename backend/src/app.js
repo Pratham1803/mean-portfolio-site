@@ -28,4 +28,7 @@ app.use(`${BASE_URL}/projects`, projectRoute);
 const contactRoute = require("./routes/contact.route");
 app.use(`${BASE_URL}/contact`, contactRoute);
 
+const experinceRoute = require("./routes/experince.route");
+app.use(`${BASE_URL}/experiences`, experinceRoute);
+
 module.exports = app;
