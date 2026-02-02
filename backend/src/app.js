@@ -7,14 +7,25 @@ const { BASE_URL } = require("./constant");
 const cors = require("cors");
 // const cookieParser = require('cookie-parser');
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../../public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 // app.use(cookieParser());
-app.use(logReq);
+// app.use(logReq);
 
 // importing routers
+
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../public/frontend/index.html"));
+// });
+
+
+app.get('/', (req, res) => {
+  res.sendFile(
+    path.join(__dirname, '../../public/index.html')
+  );
+});
 
 const userRoute = require("./routes/about.route");
 app.use(`${BASE_URL}/about`, userRoute);

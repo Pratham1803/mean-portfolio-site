@@ -8,8 +8,7 @@ connectDb()
   .then(() => {
     const PORT = process.env.PORT || 8000;
     app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-      console.log(`Contact form endpoint: http://localhost:${PORT}/portfolio/api/v1/contact`);
+      console.log(`Server is running on port ${PORT}`);      
     });
   })
   .catch((error) => {

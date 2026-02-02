@@ -24,8 +24,7 @@ app.directive("projectSection", function () {
           $scope.vm.error = true;
         });
 
-      $scope.visibleProjects = function () {
-        console.log(`Filter: ${$scope.vm.filterType}`);
+      $scope.visibleProjects = function () {        
         if ($scope.vm.filterType === "All") {
           return $scope.vm.showAll ? $scope.vm.projects : $scope.vm.projects.slice(0, 6);
         } else {
