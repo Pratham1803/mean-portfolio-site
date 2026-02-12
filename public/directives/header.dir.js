@@ -7,14 +7,35 @@ app.directive("headerSection", function () {
       $scope.isLoading = true;
       $scope.about = null;
 
-      AboutService.getAbout().then(function (data) {
-        $scope.about = data;
-        $scope.isLoading = false;
-      }).catch(function(error) {
-        console.error('Error loading about data:', error);
-        $scope.isLoading = false;
-        $scope.error = true;
-      });
+      $scope.isMobileMenuOpen = false;
+
+      $scope.toggleMobileMenu = function (forceOpen) {
+        if (forceOpen === true) {
+          $scope.isMobileMenuOpen = true;
+          return;
+        }
+        if (forceOpen === false) {
+          $scope.isMobileMenuOpen = false;
+          return;
+        }
+
+        $scope.isMobileMenuOpen = !$scope.isMobileMenuOpen;
+      };
+
+      $scope.closeMobileMenu = function () {
+        $scope.isMobileMenuOpen = false;
+      };
+
+      AboutService.getAbout()
+        .then(function (data) {
+          $scope.about = data;
+          $scope.isLoading = false;
+        })
+        .catch(function (error) {
+          console.error("Error loading about data:", error);
+          $scope.isLoading = false;
+          $scope.error = true;
+        });
     },
   };
 });

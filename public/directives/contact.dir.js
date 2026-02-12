@@ -19,7 +19,7 @@ app.directive("contactSection", function () {
       // Load about data
       AboutService.getAbout().then(function (data) {
         $scope.about = data;
-        $scope.isLoading = false;
+        $scope.isLoading = false;        
       }).catch(function(error) {
         console.error('Error loading about data:', error);
         $scope.isLoading = false;
