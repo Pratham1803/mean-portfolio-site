@@ -2,7 +2,7 @@
 app.directive("projectSection", function () {
   return {
     restrict: "E",
-    templateUrl: "views/projects.html",
+    templateUrl: "client/views/projects.html",
     controller: function ($scope, $http) {
       $scope.vm = {
         filterType: "All",

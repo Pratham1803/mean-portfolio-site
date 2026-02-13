@@ -15,4 +15,4 @@ class ApiResponse {
     }
 }
 
-module.exports = ApiResponse // Export the ApiResponse class
+export {ApiResponse} // Export the ApiResponse class

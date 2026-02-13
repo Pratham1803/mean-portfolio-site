@@ -2,7 +2,7 @@
 app.directive("headerSection", function () {
   return {
     restrict: "E",
-    templateUrl: "views/header.html",
+    templateUrl: "client/views/header.html",
     controller: function ($scope, AboutService) {
       $scope.isLoading = true;
       $scope.about = null;

@@ -10,7 +10,7 @@ connectDb()
 
     if (process.env.NODE_ENV === "DEV") {
       app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+        console.log(`Server is running on port ${PORT}, Click here to open: http://localhost:${PORT}. In ${process.env.NODE_ENV} mode`);
       });
     }
   })

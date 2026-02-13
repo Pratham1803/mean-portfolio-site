@@ -2,7 +2,7 @@
 app.directive("contactSection", function () {
   return {
     restrict: "E",
-    templateUrl: "views/contact.html",
+    templateUrl: "client/views/contact.html",
     controller: function ($scope, AboutService, ContactService) {
       $scope.isLoading = true;
       $scope.about = null;

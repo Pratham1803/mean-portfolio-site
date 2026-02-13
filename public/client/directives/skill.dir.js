@@ -2,7 +2,7 @@
 app.directive('skillSection', function() {
   return {
     restrict: 'E',
-    templateUrl: 'views/skill.html',
+    templateUrl: 'client/views/skill.html',
     controller: function($scope, $http) {
       $scope.isLoading = true;
       $scope.skill = null;

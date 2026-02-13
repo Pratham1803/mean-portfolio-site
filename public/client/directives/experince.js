@@ -2,7 +2,7 @@
 app.directive("experienceSection", function () {
   return {
     restrict: "E",
-    templateUrl: "views/experience.html",
+    templateUrl: "client/views/experience.html",
     controller: function ($scope, $http) {
       $scope.isLoading = false;
       $scope.error = false;

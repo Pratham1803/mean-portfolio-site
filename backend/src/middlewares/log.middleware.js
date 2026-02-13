@@ -141,7 +141,7 @@ const sendLogEmail = async (logDetails) => {
             <div class="value" style="background-color: #f8f9fa; padding: 10px; border-radius: 4px; font-family: monospace;">${JSON.stringify(
               logDetails.bodyData,
               null,
-              2
+              2,
             )}</div>
         </div>`
             : ""
@@ -241,44 +241,45 @@ const logRequest = (req, _, next) => {
   fs.appendFileSync("log.txt", `${simpleLog}\n`);
 
   // Collect detailed information for email
-  const logDetails = {
-    timestamp: dateStr,
-    method: req.method,
-    url: req.originalUrl,
-    path: req.path,
-    protocol: req.protocol,
-    httpVersion: req.httpVersion,
-    ip: req.ip || req.connection.remoteAddress,
-    realIP: req.headers["x-real-ip"],
-    forwardedFor: req.headers["x-forwarded-for"],
-    forwardedHost: req.headers["x-forwarded-host"],
-    userAgent: req.headers["user-agent"],
-    browser: parseBrowser(req.headers["user-agent"]),
-    os: parseOS(req.headers["user-agent"]),
-    device: parseDevice(req.headers["user-agent"]),
-    acceptLanguage: req.headers["accept-language"],
-    acceptEncoding: req.headers["accept-encoding"],
-    referer: req.headers["referer"] || req.headers["referrer"],
-    origin: req.headers["origin"],
-    host: req.headers["host"],
-    contentType: req.headers["content-type"],
-    contentLength: req.headers["content-length"],
-    queryParams:
-      Object.keys(req.query).length > 0 ? JSON.stringify(req.query) : null,
-    bodyData: req.method !== "GET" && req.body ? req.body : null,
-    connection: req.headers["connection"],
-    secFetchSite: req.headers["sec-fetch-site"],
-    secFetchMode: req.headers["sec-fetch-mode"],
-    secFetchDest: req.headers["sec-fetch-dest"],
-    dnt: req.headers["dnt"],
-    cacheControl: req.headers["cache-control"],
-  };
+  if (process.env.ENV === "PROD") {
+    const logDetails = {
+      timestamp: dateStr,
+      method: req.method,
+      url: req.originalUrl,
+      path: req.path,
+      protocol: req.protocol,
+      httpVersion: req.httpVersion,
+      ip: req.ip || req.connection.remoteAddress,
+      realIP: req.headers["x-real-ip"],
+      forwardedFor: req.headers["x-forwarded-for"],
+      forwardedHost: req.headers["x-forwarded-host"],
+      userAgent: req.headers["user-agent"],
+      browser: parseBrowser(req.headers["user-agent"]),
+      os: parseOS(req.headers["user-agent"]),
+      device: parseDevice(req.headers["user-agent"]),
+      acceptLanguage: req.headers["accept-language"],
+      acceptEncoding: req.headers["accept-encoding"],
+      referer: req.headers["referer"] || req.headers["referrer"],
+      origin: req.headers["origin"],
+      host: req.headers["host"],
+      contentType: req.headers["content-type"],
+      contentLength: req.headers["content-length"],
+      queryParams:
+        Object.keys(req.query).length > 0 ? JSON.stringify(req.query) : null,
+      bodyData: req.method !== "GET" && req.body ? req.body : null,
+      connection: req.headers["connection"],
+      secFetchSite: req.headers["sec-fetch-site"],
+      secFetchMode: req.headers["sec-fetch-mode"],
+      secFetchDest: req.headers["sec-fetch-dest"],
+      dnt: req.headers["dnt"],
+      cacheControl: req.headers["cache-control"],
+    };
 
-  // Send detailed email asynchronously (don't wait for it)
-  sendLogEmail(logDetails).catch((err) =>
-    console.error("Email error:", err.message)
-  );
-
+    // Send detailed email asynchronously (don't wait for it)
+    sendLogEmail(logDetails).catch((err) =>
+      console.error("Email error:", err.message),
+    );
+  }
   next();
 };
 

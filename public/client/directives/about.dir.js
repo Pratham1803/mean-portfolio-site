@@ -1,8 +1,9 @@
-// directives/footer.js
-app.directive('footerSection', function() {
+
+// directives/about.js
+app.directive('aboutSection', function() {
   return {
     restrict: 'E',
-    templateUrl: 'views/footer.html',
+    templateUrl: 'client/views/about.html',
     controller: function($scope, AboutService) {
       $scope.isLoading = true;
       $scope.about = null;
