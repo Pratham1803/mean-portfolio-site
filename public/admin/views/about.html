@@ -1,0 +1,218 @@
+<section class="min-h-screen bg-[#020617] text-white p-6">
+    <div class="max-w-6xl mx-auto">
+        <header class="border border-gray-800 rounded-xl bg-[#0f172a] px-6 py-5 mb-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold gradient-text">About Section</h1>
+                    <p class="text-sm text-gray-400 mt-1">Update the fields used by the backend About schema.</p>
+                </div>
+                <button id="preview-btn"
+                    class="px-5 py-2 rounded-lg border border-gray-700 text-gray-300 hover:bg-gray-800 transition font-medium w-fit">
+                    Preview Portfolio
+                </button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            <aside class="xl:col-span-1">
+                <div class="bg-[#0f172a] border border-gray-800 rounded-xl p-5 sticky top-6">
+                    <h2 class="text-lg font-semibold mb-3">Required Content</h2>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><span class="text-red-400">●</span> Full Name (`name`)</li>
+                        <li><span class="text-red-400">●</span> Professional Title (`title`)</li>
+                        <li><span class="text-red-400">●</span> Tagline (`tagLine`)</li>
+                        <li><span class="text-red-400">●</span> Email (`email`)</li>
+                        <li><span class="text-red-400">●</span> Location (`location`)</li>
+                        <li><span class="text-red-400">●</span> Description (`description`)</li>
+                    </ul>
+                    <p class="text-xs text-gray-500 mt-4">Social links, resume, profile photo, and education are optional but recommended.</p>
+                </div>
+            </aside>
+
+            <main class="xl:col-span-2 space-y-6">
+                <div class="bg-[#0f172a] rounded-xl border border-gray-800 p-6">
+                    <h2 class="text-2xl font-bold mb-5">Basic Information</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Full Name <span class="text-red-400">*</span></label>
+                            <input id="fullName" type="text" placeholder="Enter your full name" required
+                                class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Professional Title <span class="text-red-400">*</span></label>
+                            <input id="professionalTitle" type="text" placeholder="e.g., Full Stack Developer" required
+                                class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Tagline <span class="text-red-400">*</span></label>
+                            <input id="tagline" type="text" placeholder="Short introduction line" required
+                                class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Email <span class="text-red-400">*</span></label>
+                            <input id="email" type="email" placeholder="your@email.com" required
+                                class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Location <span class="text-red-400">*</span></label>
+                            <input id="location" type="text" placeholder="City, Country" required
+                                class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#0f172a] rounded-xl border border-gray-800 p-6">
+                    <h2 class="text-2xl font-bold mb-5">Description</h2>
+                    <div class="flex justify-between items-center mb-3">
+                        <label class="block text-sm font-medium text-gray-300">About Description <span class="text-red-400">*</span></label>
+                        <span class="text-xs text-gray-400"><span id="charCount">0</span>/500</span>
+                    </div>
+                    <textarea id="aboutDescription" maxlength="500" required
+                        placeholder="Write a concise professional summary..."
+                        class="w-full min-h-[140px] bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600"></textarea>
+                </div>
+
+                <div class="bg-[#0f172a] rounded-xl border border-gray-800 p-6">
+                    <h2 class="text-2xl font-bold mb-5">Profile Photo & Resume</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-3">Profile Photo (`profilePhoto`)</label>
+                            <div class="border border-gray-700 rounded-lg p-4 text-center">
+                                <div id="imagePreview"
+                                    class="w-24 h-24 rounded-full bg-[#1a2332] mx-auto flex items-center justify-center text-gray-600 mb-3 overflow-hidden">
+                                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                                    </svg>
+                                </div>
+                                <input id="imageInput" type="file" accept="image/*" class="hidden">
+                                <button type="button" onclick="document.getElementById('imageInput').click()"
+                                    class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium transition">
+                                    Upload Photo
+                                </button>
+                                <button id="removeImageBtn" type="button"
+                                    class="px-4 py-2 mt-2 border border-gray-700 text-gray-400 hover:text-red-400 hover:border-red-400 rounded-lg text-sm font-medium transition"
+                                    style="display: none;">
+                                    Remove
+                                </button>
+                                <p class="text-xs text-gray-500 mt-2">JPG/PNG, max 5MB</p>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-3">Resume (`resume`)</label>
+                            <div class="border border-gray-700 rounded-lg p-4 h-full flex flex-col justify-between">
+                                <div>
+                                    <p class="text-xs text-gray-400">Current file</p>
+                                    <p id="resumeFileName" class="text-sm font-medium text-white mt-1">No resume uploaded</p>
+                                    <p class="text-xs text-gray-500 mt-2">PDF only, max 10MB</p>
+                                </div>
+                                <div class="flex gap-2 mt-4">
+                                    <button id="downloadResumeBtn" type="button"
+                                        class="px-4 py-2 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-lg text-sm font-medium transition"
+                                        style="display: none;">
+                                        Download
+                                    </button>
+                                    <button type="button" onclick="document.getElementById('resumeInput').click()"
+                                        class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium transition">
+                                        Upload Resume
+                                    </button>
+                                    <input id="resumeInput" type="file" accept=".pdf" class="hidden">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#0f172a] rounded-xl border border-gray-800 p-6">
+                    <h2 class="text-2xl font-bold mb-5">Social Links</h2>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">GitHub (`github`)</label>
+                            <input id="githubUrl" type="url" placeholder="https://github.com/username"
+                                class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">LinkedIn (`linkedin`)</label>
+                            <input id="linkedinUrl" type="url" placeholder="https://linkedin.com/in/username"
+                                class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Instagram (`instagram`)</label>
+                            <input id="instagramUrl" type="url" placeholder="https://instagram.com/username"
+                                class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-600">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#0f172a] rounded-xl border border-gray-800 p-6">
+                    <h2 class="text-2xl font-bold mb-5">Education (`education[]`)</h2>
+                    <div id="educationList" class="space-y-3 mb-4"></div>
+                    <button id="addEducationBtn" type="button"
+                        class="w-full py-3 border border-dashed border-gray-700 rounded-lg text-gray-400 hover:text-indigo-500 hover:border-indigo-500 font-medium transition flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        Add Education
+                    </button>
+                </div>
+
+                <div class="border border-gray-800 rounded-xl bg-[#0f172a] p-4">
+                    <div class="flex justify-end">
+                        <button id="saveBtn" type="button"
+                            class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-semibold text-white transition">
+                            Save Changes
+                        </button>
+                    </div>
+                    <p id="lastUpdated" class="text-xs text-gray-500 mt-3 text-right">Last updated: Never</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="educationModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div class="bg-[#0f172a] rounded-xl border border-gray-800 w-full max-w-md">
+            <div class="p-6 border-b border-gray-800">
+                <h3 id="modalTitle" class="text-2xl font-bold">Add Education</h3>
+            </div>
+            <div class="p-6 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Title</label>
+                    <input id="modalTitle_input" type="text" placeholder="e.g., Bachelor of Computer Science"
+                        class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-gray-600">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Duration</label>
+                    <input id="modalDuration" type="text" placeholder="e.g., 2021 - 2025"
+                        class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-gray-600">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Location</label>
+                    <input id="modalLocation" type="text" placeholder="e.g., Mumbai, India"
+                        class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-gray-600">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Percentage / CGPA</label>
+                    <input id="modalPercentage" type="text" placeholder="e.g., 8.5/10"
+                        class="w-full bg-[#1a2332] border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-gray-600">
+                </div>
+            </div>
+            <div class="p-6 border-t border-gray-800 flex gap-3 justify-end">
+                <button type="button" onclick="closeEducationModal()"
+                    class="px-6 py-2 border border-gray-700 text-gray-300 rounded-lg font-medium transition">
+                    Cancel
+                </button>
+                <button id="modalSaveBtn" type="button"
+                    class="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast"
+        class="fixed bottom-6 right-6 bg-emerald-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2 hidden z-40">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 16.2L4.8 12m-1.4 1.4L9 19 21 7"></path>
+        </svg>
+        <span id="toastMessage">Changes saved successfully!</span>
+    </div>
+</section>

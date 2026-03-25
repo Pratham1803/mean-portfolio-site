@@ -1,0 +1,76 @@
+<header class="bg-gray-900 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo / Title -->
+      <div class="flex items-center">
+        <span class="text-white text-lg font-semibold tracking-wide">
+          Admin Panel
+        </span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="#!/dashboard"
+           class="text-gray-300 hover:text-white transition-colors">
+          Dashboard
+        </a>
+        <a href="#!/manage-about"
+           class="text-gray-300 hover:text-white transition-colors">
+          About
+        </a>
+        <a href="#!/manage-contact"
+           class="text-gray-300 hover:text-white transition-colors">
+          Contact
+        </a>
+        <a href="#!/manage-projects"
+           class="text-gray-300 hover:text-white transition-colors">
+          Projects
+        </a>
+        <a href="#!/manage-experience"
+           class="text-gray-300 hover:text-white transition-colors">
+          Experience
+        </a>
+        <a href="#!/manage-skills"
+           class="text-gray-300 hover:text-white transition-colors">
+          Skills
+        </a>
+
+        <!-- Logout -->
+        <a href=""
+           ng-click="logout()"
+           class="ml-6 px-3 py-1.5 rounded-md bg-red-600 text-white 
+                  hover:bg-red-700 transition-colors">
+          Logout
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-gray-300 hover:text-white focus:outline-none"
+              onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        ☰
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+    <div class="px-4 pt-4 pb-6 space-y-2 text-sm font-medium">
+      <a href="#!/dashboard" class="block text-gray-300 hover:text-white">Dashboard</a>
+      <a href="#!/manage-about" class="block text-gray-300 hover:text-white">About</a>
+      <a href="#!/manage-contact" class="block text-gray-300 hover:text-white">Contact</a>
+      <a href="#!/manage-projects" class="block text-gray-300 hover:text-white">Projects</a>
+      <a href="#!/manage-experience" class="block text-gray-300 hover:text-white">Experience</a>
+      <a href="#!/manage-skills" class="block text-gray-300 hover:text-white">Skills</a>
+
+      <a href=""
+         ng-click="logout()"
+         class="block mt-3 px-3 py-2 rounded-md bg-red-600 text-white 
+                hover:bg-red-700">
+        Logout
+      </a>
+    </div>
+  </div>
+</header>
+  

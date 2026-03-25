@@ -21,3 +21,22 @@ exports.createAbout = async (req, res) => {
     res.status(400).json({ message: 'Creation failed', error });
   }
 };
+
+// PUT /api/about (update existing or create if missing)
+exports.updateAbout = async (req, res) => {
+  try {
+    const updatedAbout = await About.findOneAndUpdate(
+      {},
+      req.body,
+      {
+        new: true,
+        upsert: true,
+        setDefaultsOnInsert: true
+      }
+    );
+
+    res.json(updatedAbout);
+  } catch (error) {
+    res.status(400).json({ message: 'Update failed', error });
+  }
+};

@@ -14,12 +14,19 @@
 
     <script src="/admin/const.js"></script>
     <script src="/admin/directives/login.dir.js"></script>
+    <script src="/admin/directives/dashboard.dir.js"></script>
+    <script src="/admin/directives/header.dir.js"></script>
+    <script src="/admin/directives/about.dir.js"></script>
+    
     <script src="/services/about.service.js"></script>
     <script src="/services/contact.service.js"></script>
+
+    <script src="/admin/services/auth.service.js"></script>
 </head>
 
 <body class="font-sans bg-dark text-gray-200 min-h-screen" ng-app="portfolioApp">
-    <login-section></login-section>
+    <header-section></header-section>
+    <div ng-view></div>
 </body>
 
 </html>
