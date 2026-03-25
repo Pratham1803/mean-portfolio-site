@@ -1,4 +1,3 @@
-const fs = require("fs");
 const nodemailer = require("nodemailer");
 
 // Create email transporter
@@ -238,7 +237,7 @@ const logRequest = (req, _, next) => {
   // Simple log for file
   const simpleLog = `[${dateStr}] ${req.ip} ${req.method} ${req.originalUrl}`;
   console.log(simpleLog);
-  fs.appendFileSync("log.txt", `${simpleLog}\n`);
+  // fs.appendFileSync("log.txt", `${simpleLog}\n`);
 
   // Collect detailed information for email
   if (process.env.ENV === "PROD") {
